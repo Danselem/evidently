@@ -73,10 +73,15 @@ pip install -r requirements.txt
 
 ### 1 - Launch a cluster 
 
+### Link to augment Docker compose for Prefect
+`https://github.com/rpeden/prefect-docker-compose/blob/main/docker-compose.yml`
+
 ```bash
 docker compose up -d
 ```
+`sudo lsof -i :5432 `
 
+`kill -9 PID-value`
 <details>
 <summary>The cluster components are specified in the `docker-compose.yaml`</summary>
 
@@ -129,7 +134,9 @@ python src/pipelines/prepare_reference_data.py  # Save to 'data/reference'
 ```bash
 export PREFECT_API_URL=http://localhost:4200/api
 ```
-
+```bash
+export PREFECT_API_URL=http://10.1.16.86:4200/api
+10.1.16.86
 ### 2 - Run scheduled inference & monitoring pipelines
 
 ```bash 
